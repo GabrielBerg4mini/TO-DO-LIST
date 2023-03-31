@@ -1,17 +1,13 @@
 :root {
   --color-dark: rgb(14, 14, 14);
-  --color-dark2: rgb(32, 32, 32);
-  --color-dark3: rgb(22, 22, 22);
-  --color-dark4: #191818;
+  --color-dark4: #31313159;
   --color-dark5: #2f2e2e;
-  --color-dark6: #2d2c2c;
+  --color-dark6: #5e5a5a;
   --color-white: #fff;
   --color-green: rgb(103, 195, 80);
-  --color-green2: rgb(42, 128, 20);
-  --color-red: rgb(184, 40, 35);
-  --color-red2: rgb(146, 22, 17);
-  --color-orange: rgb(255, 147, 5);
-  --color-orange2: rgb(255, 209, 83);
+  --color-green2: rgb(51, 255, 0);
+  --color-blue: rgb(231, 66, 44);
+  --color-blue2: rgb(199, 155, 98);
 }
 
 * {
@@ -21,8 +17,10 @@
 }
 
 body {
+  width: 100%;
+  min-height: 100vh;
   font-family: "Poppins" !important;
-  background: var(--color-dark);
+  background-image: linear-gradient(200deg, black, #073341);
   color: var(--color-white);
   display: flex;
   flex-direction: column;
@@ -34,6 +32,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+}
+
+.titulo {
+    padding-top: 5rem;
 }
 
 .content--add-item {
@@ -48,22 +50,30 @@ body {
   font-size: 1rem;
   outline: none;
   padding: 1rem;
+  background: var(--color-white);
 }
 #input-new-task {
-  width: 20rem;
-  border-radius: 1rem;
+    width: 20rem;
+    border-radius: 1rem;
+}
+#input-new-task::placeholder {
+    font-size: 1rem;
+  font-weight: 600;  
+  color: var(--color-dark6);
 }
 #btn-new-task {
   border-radius: 50%;
-  background: var(--color-dark2);
-  color: var(--color-white);
+  background: var(--color-blue);
+  color: var(--color-dark);
   width: 50px;
   height: 50px;
   cursor: pointer;
+  border: none;
   transition: .5s;
 }
 #btn-new-task:hover {
-    background: var(--color-dark3);
+    background: var(--color-blue2);
+    transform: scale(1.1);
 }
 #to-do-list {
     display: flex;
@@ -80,7 +90,7 @@ body {
 }
 
 #to-do-list li:hover {
-    background: var(--color-dark3);
+    background: var(--color-dark4);
     transition: 1s;
     border-radius: 1rem;
     padding-left: 1rem;
@@ -88,7 +98,7 @@ body {
 
 #btn-ok {
     background: var(--color-green);
-    width: 40px;
+    width:  40px;
     height: 40px;
     border-radius: 50%;
     border: none;
@@ -103,101 +113,8 @@ body {
     margin-left: 1rem;
 }
 #btn-ok:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 2s;
     background: var(--color-green2);
     box-shadow: 0 0 0.4rem var(--color-white);
-}
-
-#btnEditar {
-    background: var(--color-orange);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    outline: none;
-    border: none;
-    color: var(--color-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-left: 1rem;
-}
-
-#btnEditar:hover {
-    transform: scale(1.1);
-    transition: 2s;
-    background: var(--color-orange2);
-    box-shadow: 0 0 0.4rem var(--color-white);
-}
-#janelaEdicao {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1.1rem;
-    background: var(--color-dark4);
-    border: 1px solid var(--color-dark4);
-    width: 415px;
-    border: 0.8rem;
-    z-index: 200;
-    display: none;
-}
-
-#janelaEdicao.abrir {
-    display: block !important;
-}
-
-#janelaEdicaoFundo {
-    position: fixed;
-    top: 0;
-    background-color: var(--color-dark3);
-    bottom: 0;
-    left: 0;
-    opacity: 0.7;
-    z-index: 100;
-    right: 0;
-    display: none;
-}   
-
-#janelaEdicaoFundo.abrir {
-    display: block !important;
-}
-
-form {
-    width: 100%;
-    margin-top: 1.1rem;
-}
-
-.frm-linha {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.1rem;
-}
-
-.frm-linha label {
-    margin-bottom: 0.5rem;
-}
-
-.frm-linha input {
-    padding: 0.9rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--color-dark4);
-    font-size: 1.2rem;
-    background: var(--color-dark6);
-    color: var(--color-white);
-}
-
-.frm-linha button {
-    background: var(--color-dark6);
-    border: 1px solid var(--color-dark4);
-    padding: 7px;
-    margin-bottom: 10px;
-    border-radius: 0.5rem;
-    color: var(--color-white);
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-family: 'Poppins';
-    outline: none;
 }
