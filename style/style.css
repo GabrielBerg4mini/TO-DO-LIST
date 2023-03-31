@@ -2,11 +2,16 @@
   --color-dark: rgb(14, 14, 14);
   --color-dark2: rgb(32, 32, 32);
   --color-dark3: rgb(22, 22, 22);
+  --color-dark4: #191818;
+  --color-dark5: #2f2e2e;
+  --color-dark6: #2d2c2c;
   --color-white: #fff;
   --color-green: rgb(103, 195, 80);
-  --color-green2: rgb(51, 149, 26);
+  --color-green2: rgb(42, 128, 20);
   --color-red: rgb(184, 40, 35);
   --color-red2: rgb(146, 22, 17);
+  --color-orange: rgb(255, 147, 5);
+  --color-orange2: rgb(255, 209, 83);
 }
 
 * {
@@ -16,7 +21,7 @@
 }
 
 body {
-  font-family: "Poppins";
+  font-family: "Poppins" !important;
   background: var(--color-dark);
   color: var(--color-white);
   display: flex;
@@ -71,5 +76,128 @@ body {
     font-size: 1.4rem;
     text-transform: capitalize;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+}
+
+#to-do-list li:hover {
+    background: var(--color-dark3);
+    transition: 1s;
+    border-radius: 1rem;
+    padding-left: 1rem;
+}
+
+#btn-ok {
+    background: var(--color-green);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: var(--color-dark);
+    font-size: 1rem;
+    padding: .4rem .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+    transition: .4s;
+    margin-left: 1rem;
+}
+#btn-ok:hover {
+    transform: scale(1.1);
+    transition: 2s;
+    background: var(--color-green2);
+    box-shadow: 0 0 0.4rem var(--color-white);
+}
+
+#btnEditar {
+    background: var(--color-orange);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+#btnEditar:hover {
+    transform: scale(1.1);
+    transition: 2s;
+    background: var(--color-orange2);
+    box-shadow: 0 0 0.4rem var(--color-white);
+}
+#janelaEdicao {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.1rem;
+    background: var(--color-dark4);
+    border: 1px solid var(--color-dark4);
+    width: 415px;
+    border: 0.8rem;
+    z-index: 200;
+    display: none;
+}
+
+#janelaEdicao.abrir {
+    display: block !important;
+}
+
+#janelaEdicaoFundo {
+    position: fixed;
+    top: 0;
+    background-color: var(--color-dark3);
+    bottom: 0;
+    left: 0;
+    opacity: 0.7;
+    z-index: 100;
+    right: 0;
+    display: none;
+}   
+
+#janelaEdicaoFundo.abrir {
+    display: block !important;
+}
+
+form {
+    width: 100%;
+    margin-top: 1.1rem;
+}
+
+.frm-linha {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.frm-linha label {
+    margin-bottom: 0.5rem;
+}
+
+.frm-linha input {
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-dark4);
+    font-size: 1.2rem;
+    background: var(--color-dark6);
+    color: var(--color-white);
+}
+
+.frm-linha button {
+    background: var(--color-dark6);
+    border: 1px solid var(--color-dark4);
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: 'Poppins';
+    outline: none;
 }
